@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML5 Clock</title>
+    <meta name="keywords" content="html5, layout, html5 layout" />
+    <style type="text/css">
+    body {
+      background-color: black;
+    }
+    #uhr {
+      font-size: 100px;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 50%;
+      margin-top: -50px;
+    }
+    </style>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+    $(function() {
+      var uhr = $('#uhr');
+      function refresh() {
+        var d = new Date();
+        var twodigits = function (x) { return x < 10 ? '0'+x : ''+x; }
+        uhr.text(twodigits(d.getHours()) + ':' + twodigits(d.getMinutes()) + ':' + twodigits(d.getSeconds()));
+        setTimeout(refresh, 1000);
+      };
+      refresh();
+      $('body').click(function() {
+        function r() {
+          return Math.round(Math.random()*255);
+        }
+        uhr.css({color: 'rgb('+r()+','+r()+','+r()+')'});
+        return true;
+      });
+    });
+    </script>
+  </head>
+  <body>
+   <div id="uhr"></div>
+  </body>
+</html>
