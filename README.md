@@ -31,3 +31,10 @@ This repository contains lots of code from my videos. You can access the playlis
 
 - use setup.sh and servo.php in combination, which is the tea brewing script
 - alternatively use servo.py and code your own things with it
+
+## Stepper Motors
+
+[![Stepper motor with Raspberry Pi 3](http://img.youtube.com/vi/Nwvw3x9wFh4/0.jpg)](https://www.youtube.com/watch?v=Nwvw3x9wFh4)
+- connect pins as described in setup.sh and follow instructions in the comments
+- use setup.sh to initialize GPIO
+- run php stepper.php to rotate the motor
