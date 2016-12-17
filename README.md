@@ -32,6 +32,10 @@ This repository contains lots of code from my videos. You can access the playlis
 - use setup.sh and servo.php in combination, which is the tea brewing script
 - alternatively use servo.py and code your own things with it
 
+## Servo Controller
+
+[![Servo Controller](http://img.youtube.com/vi/4aB_A-POu9E/0.jpg)](https://www.youtube.com/watch?v=4aB_A-POu9E)
+
 ## Stepper Motors
 
 [![Stepper motor with Raspberry Pi 3](http://img.youtube.com/vi/Nwvw3x9wFh4/0.jpg)](https://www.youtube.com/watch?v=Nwvw3x9wFh4)
