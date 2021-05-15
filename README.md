@@ -42,3 +42,10 @@ This repository contains lots of code from my videos. You can access the playlis
 - connect pins as described in setup.sh and follow instructions in the comments
 - use setup.sh to initialize GPIO
 - run php stepper.php to rotate the motor
+
+## Fighter Plane
+[![Fighter Plane](http://img.youtube.com/vi/uFxa_MgkhwY/0.jpg)](https://www.youtube.com/watch?v=uFxa_MgkhwY)
+- follow the install instructions in the script
+- connect I²C bus to PCA9685
+- connect 4 servos to PWM outputs
+- call http://[RASPI-IP-ADDRESS]:8000 on your smart phone
