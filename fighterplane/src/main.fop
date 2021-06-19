@@ -1,0 +1,11 @@
+RaspiPython<"plane">.
+
+
+PWMRead<"throttle_input", "plane", "18">.
+PWMRead<"pitch_input", "plane", "23">.
+PWMRead<"roll_input", "plane", "24">.
+
+PWMWriteI2C<"roll_input", "plane", "0">.
+PWMWriteI2C<"throttle_input", "plane", "1">.
+PWMWriteI2C<"roll_input", "plane", "2">.
+PWMWriteI2C<"pitch_input", "plane", "3">.

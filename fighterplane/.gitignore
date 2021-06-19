@@ -1,0 +1,5 @@
+config*
+out
+.*.swp
+release.tar.xz
+makeremote
