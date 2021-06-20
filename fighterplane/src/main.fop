@@ -7,5 +7,16 @@ PWMRead<"roll_input", "plane", "24">.
 
 PWMWriteI2C<"roll_input", "plane", "0">.
 PWMWriteI2C<"throttle_input", "plane", "1">.
-PWMWriteI2C<"roll_input", "plane", "2">.
+PWMWriteI2C<"roll_output", "plane", "2">.
 PWMWriteI2C<"pitch_input", "plane", "3">.
+
+Accelerometer<"plane", "x", "y", "z">.
+BooleanRaspiUse<"x", "plane">.
+BooleanRaspiUse<"y", "plane">.
+BooleanRaspiUse<"z", "plane">.
+
+/*FloatConstant<"target_x", "0.2">.*/
+
+FloatInterpolate<"target_y", "-1.0", "1.0", "roll_input", "1000", "2000">.
+FloatDifference<"correct_y", "y", "target_y">.
+FloatInterpolate<"roll_output", "1000", "2000", "correct_y", "-1", "1">.
