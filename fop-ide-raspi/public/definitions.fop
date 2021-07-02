@@ -1,0 +1,25 @@
+Predicate<"RaspiPython", "1">.
+/* instanciate a new Raspi with RaspiPython<"raspi">. */
+Assert<"RaspiPython", "raspi", "for this application, you must at least include a RaspiPython<\"raspi\">.">.
+
+Predicate<"PWMRead", "3">.
+/* PWMRead<channel_id, "raspi", gpio_pin_id>. reads PWM value at GPIO pin (BCM numbering) into channel_id */
+
+Predicate<"PWMWriteI2C", "3">.
+/* PWMWriteI2C<channel_id, "raspi", output_channel>. writes value of channel_id to output_channel of 16-channel PWM driver PCA9685 (output_channel must be 0..15) */
+
+Predicate<"Accelerometer", "4">.
+/* Accelerometer<"raspi", x_channel, y_channel, z_channel>. fills accelerometer x y z values into channels */
+
+Predicate<"BooleanRaspiUse", "2">.
+/* BooleanRaspiUse<channel_id, "raspi"> displays value of channel even if channel is not used */
+
+Predicate<"FloatInterpolate", "6">.
+/* FloatInterpolate<output_channel, out_min, out_max, input_channel, input_min, input_max>. maps values of input channel between input_min and input_max to a value range from output_min to output_max */
+
+Predicate<"FloatDifference", "3">.
+/* FloatDifference<output_channel, input_a, input_b>. writes b - a into output_channel */
+
+Predicate<"FloatAdd", "3">.
+/* FloatAdd<output_channel, input_a, input_b>. writes a + b into output_channel */
+

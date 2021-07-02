@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<title>FOP IDE Raspi</title>
+</head>
+<body>
+
+<form action='compile' method='POST' accept-charset="UTF-8">
+<button type='submit' name='setup.sh'>compile</button>
+<select name='mode'>
+	<option value='setup'>setup.sh for fresh SD card</option>
+	<option value='main'>main.py for update in ~/raspi</option>
+</select>
+<a href='definitions.fop' target='_blank'>See available definitions</a>
+<br>
+<textarea name='code' id='code' style='width: 100%; height: calc(100vh - 150px);'>RaspiPython<"raspi">.
+
+PWMRead<"pin18", "raspi", "18">. /* read PWM signal from pin 18 into channel 'pin18' */
+BooleanRaspiUse<"raspi", "pin18">. /* display the value */
+</textarea>
+</form>
+
+<pre>
+How to automate the compiler:
+ - create your main.fop with the code you like on raspi
+ - first run: do a POST request on /compile with code=...&amp;mode=setup for setup and pipe it to bash
+ - every next run: do a POST request on /compile with code=...&amp;mode=main and store it to ~/raspi/main.py on your raspi, then restart ~/raspi/main.py
+ - screen -r -d to monitor all values (Ctrl+A, wait, D for detatching from screen session)
+</pre>
+
+</body>
+</html>
