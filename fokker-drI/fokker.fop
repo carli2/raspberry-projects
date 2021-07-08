@@ -1,13 +1,15 @@
-/*
-
-configuration for Fokker DR-I
-
-*/
 RaspiWeb<"raspi">.
-RaspiWebInputFloat<"raspi", "1-throttle", "Throttle", "1000", "2000", "1000">.
-RaspiWebInputFloat<"raspi", "2-rudder", "Rudder", "1000", "2000", "1500">.
-RaspiWebInputFloat<"raspi", "3-elevon", "Elevon", "1000", "2000", "1500">.
-RaspiWebInputFloat<"raspi", "4-aeleron", "Aeleron", "1000", "2000", "1500">.
+PWMRead<"1-throttle", "raspi", "23">.
+PWMRead<"2-rudder", "raspi", "8">.
+PWMRead<"3-elevon", "raspi", "24">.
+PWMRead<"4-aeleroni", "raspi", "25">.
+
+FloatInterpolate<"4-aeleron", "1000", "2000", "4-aeleroni", "2000", "1000">.
+
+RaspiWebOutputFloat<"raspi", "1-throttle", "Throttle", "1000", "2000", "1000">.
+RaspiWebOutputFloat<"raspi", "2-rudder", "Rudder", "1000", "2000", "1500">.
+RaspiWebOutputFloat<"raspi", "3-elevon", "Elevon", "1000", "2000", "1500">.
+RaspiWebOutputFloat<"raspi", "4-aeleron", "Aeleron", "1000", "2000", "1500">.
 
 
 
