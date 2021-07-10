@@ -1,20 +1,42 @@
 RaspiWeb<"raspi">.
 PWMRead<"1-throttle", "raspi", "23">.
 PWMRead<"2-rudder", "raspi", "8">.
-PWMRead<"3-elevon", "raspi", "24">.
-PWMRead<"4-aeleroni", "raspi", "25">.
-
-FloatInterpolate<"4-aeleron", "1000", "2000", "4-aeleroni", "2000", "1000">.
+PWMRead<"3-elevator", "raspi", "24">.
+PWMRead<"4-aileron", "raspi", "25">.
 
 RaspiWebOutputFloat<"raspi", "1-throttle", "Throttle", "1000", "2000", "1000">.
-RaspiWebOutputFloat<"raspi", "2-rudder", "Rudder", "1000", "2000", "1500">.
-RaspiWebOutputFloat<"raspi", "3-elevon", "Elevon", "1000", "2000", "1500">.
-RaspiWebOutputFloat<"raspi", "4-aeleron", "Aeleron", "1000", "2000", "1500">.
+RaspiWebOutputFloat<"raspi", "2-control", "Rudder", "1000", "2000", "1500">.
+RaspiWebOutputFloat<"raspi", "3-control", "Elevon", "1000", "2000", "1500">.
+RaspiWebOutputFloat<"raspi", "4-control", "Aeleron", "1000", "2000", "1500">.
 
+/* Accelerometer */
+Accelerometer<"raspi", "x", "y", "z">.
+Gyro<"raspi", "gx", "gy", "gz">.
+RaspiWebOutputFloat<"raspi", "x", "Accelerometer-x", "-1", "1", "0">.
+RaspiWebOutputFloat<"raspi", "y", "Accelerometer-y", "-1", "1", "0">.
+RaspiWebOutputFloat<"raspi", "z", "Accelerometer-z", "-1", "1", "0">.
+RaspiWebOutputFloat<"raspi", "gx", "Gyro-x", "-100", "100", "0">.
+RaspiWebOutputFloat<"raspi", "gy", "Gyro-y", "-100", "100", "0">.
+RaspiWebOutputFloat<"raspi", "gz", "Gyro-z", "-100", "100", "0">.
+
+/* PI controller for aileron <-> accel y */
+FloatInterpolate<"4-target", "1", "-1", "4-aileron", "1100", "1900">.
+FloatDifference<"4-error", "4-target", "y">.
+FloatPiController<"4-control", "1000", "2000", "4-error", "500", "500">.
+
+/* PI controller for rudder <-> gyro z */
+FloatInterpolate<"2-target", "-100", "100", "2-rudder", "1100", "1900">.
+FloatDifference<"2-error", "2-target", "gz">.
+FloatPiController<"2-control", "1000", "2000", "2-error", "5", "5">.
+
+/* PI controller for elevator <-> gyro y */
+FloatInterpolate<"3-target", "-100", "100", "3-elevator", "1100", "1900">.
+FloatDifference<"3-error", "3-target", "gy">.
+FloatPiController<"3-control", "1000", "2000", "3-error", "5", "5">.
 
 
 PWMWriteI2C<"1-throttle", "raspi", "0">.
-PWMWriteI2C<"2-rudder", "raspi", "1">.
-PWMWriteI2C<"3-elevon", "raspi", "2">.
-PWMWriteI2C<"4-aeleron", "raspi", "4">.
-PWMWriteI2C<"4-aeleron", "raspi", "5">.
+PWMWriteI2C<"2-control", "raspi", "1">.
+PWMWriteI2C<"3-control", "raspi", "2">.
+PWMWriteI2C<"4-control", "raspi", "4">.
+PWMWriteI2C<"4-control", "raspi", "5">.
