@@ -1,0 +1,11 @@
+RaspiPython<"raspi">.
+
+Accelerometer<"raspi", "x", "y", "z">.
+Gyro<"raspi", "gx", "gy", "gz">.
+RaspiWebOutputFloat<"raspi", "x", "Accelerometer-x", "-1", "1", "0">.
+RaspiWebOutputFloat<"raspi", "y", "Accelerometer-y", "-1", "1", "0">.
+RaspiWebOutputFloat<"raspi", "z", "Accelerometer-z", "-1", "1", "0">.
+RaspiWebOutputFloat<"raspi", "gx", "Gyro-x", "-100", "100", "0">.
+RaspiWebOutputFloat<"raspi", "gy", "Gyro-y", "-100", "100", "0">.
+RaspiWebOutputFloat<"raspi", "gz", "Gyro-z", "-100", "100", "0">.
+
