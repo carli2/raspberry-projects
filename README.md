@@ -2,6 +2,14 @@
 
 This repository contains lots of code from my videos. You can access the playlist under the following link: [Raspberry Pi playlist](https://www.youtube.com/watch?v=sDVzVqJBHpM&list=PL_xvdlYsZ_-3wj9-DrqjfittBO06-dQxt)
 
+## WS2812B 5050 RGB LED used as System Monitor
+
+[![Full Code + Explaination: CPU process monitor with WS2812B 5050 RGB](http://img.youtube.com/vi/kE_huREr2-8/0.jpg)](https://www.youtube.com/watch?v=kE_huREr2-8)
+
+- copy led.py on your raspi
+- follow the setup instructions in led.py in the comment section
+- run led.py (maybe as root)
+
 ## Alarm System
 
 [![Alarm System using Raspberry Pi](http://img.youtube.com/vi/rL1FPOV2llE/0.jpg)](https://www.youtube.com/watch?v=rL1FPOV2llE)
